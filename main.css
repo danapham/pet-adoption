@@ -1,3 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: darksalmon;
+  background-color: #c4e2e2;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+
+.pets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.animal {
+  border: 2px #688052 solid;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+img {
+  width: 280px;
+  padding: 10px;
+}
+
+h2 {
+  padding: 20px 0px;
+  letter-spacing: 1px;
+  background-color: #fa9584;
+  font-family: 'Work Sans', sans-serif;
+}
+
+footer {
+  background-color: #f9ae54;
+  padding: 10px 0px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.special-skill {
+  height: 80px;
 }

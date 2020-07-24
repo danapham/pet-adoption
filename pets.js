@@ -168,9 +168,9 @@ const buildPetCards = () => {
     domString +=    `<h2>${pets[i].name}</h2>`;
     domString +=    `<img src=${pets[i].imageUrl} alt="pet image"/>`;
     domString +=    `<p>${pets[i].color}</p>`;
-    domString +=    `<p>${pets[i].specialSkill}</p>`;
+    domString +=    `<p class="special-skill">${pets[i].specialSkill}</p>`;
     domString +=    `<footer>${pets[i].type}</footer>`;
-    domString += `<//div>`;
+    domString += `</div>`;
   }
   printToDom('pets', domString);
 }
