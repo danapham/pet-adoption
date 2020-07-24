@@ -176,3 +176,35 @@ const buildPetCards = () => {
 }
 
 buildPetCards(pets);
+
+const catsButton = document.getElementById('cats-button')
+
+const catsButtonClicked = (ev) =>  {
+  console.log('it worked!')
+}
+
+catsButton.addEventListener('click', catsButtonClicked);
+
+const dogsButton = document.getElementById('dogs-button')
+
+const dogsButtonClicked = (ev) =>  {
+  console.log('it worked! - dog')
+}
+
+dogsButton.addEventListener('click', dogsButtonClicked);
+
+const dinosButton = document.getElementById('dinos-button')
+
+const dinosButtonClicked = (ev) =>  {
+  console.log('it worked! - dino')
+}
+
+dinosButton.addEventListener('click', dinosButtonClicked);
+
+const allPetsButton = document.getElementById('all-pets-button')
+
+const allPetsButtonClicked = (ev) =>  {
+  console.log('it worked! - all')
+}
+
+allPetsButton.addEventListener('click', allPetsButtonClicked);
