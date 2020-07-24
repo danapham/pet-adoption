@@ -44,3 +44,19 @@ footer {
 .special-skill {
   height: 80px;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 20px;
+  width: 100px;
+  border-radius: 10px;
+}
