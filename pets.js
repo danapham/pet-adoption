@@ -158,7 +158,7 @@ const pets = [
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.getElementById(divId);
   selectedDiv.innerHTML = textToPrint;
-}
+};
 
 const buildPetCards = (obj) => {
   let domString = '';
@@ -173,31 +173,26 @@ const buildPetCards = (obj) => {
     domString += `</div>`;
   }
   printToDom('pets', domString);
-}
+};
 
 const buttonClicked = (ev) =>  {
   const buttonId = ev.target.id;
-  console.log(buttonId);
   const selectedCards = [];
 
   for (let i = 0; i < pets.length; i++) {
-
     if (buttonId === pets[i].type) {
       selectedCards.push(pets[i]);
       buildPetCards(selectedCards);
 } else if (buttonId === 'all') {
   buildPetCards(pets);
-}
-}
-
-}
+}}};
 
 const buttonEvents = () => {
   document.getElementById('cat').addEventListener('click', buttonClicked);
   document.getElementById('dog').addEventListener('click', buttonClicked);
   document.getElementById('dino').addEventListener('click', buttonClicked);
   document.getElementById('all').addEventListener('click', buttonClicked);
-}
+};
 
 buttonEvents();
 buildPetCards(pets);
