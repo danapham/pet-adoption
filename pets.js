@@ -160,51 +160,44 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-const buildPetCards = () => {
-  let domString = "";
+const buildPetCards = (obj) => {
+  let domString = '';
 
-  for (let i = 0; i < pets.length; i++) {
+  for (let i = 0; i < obj.length; i++) {
     domString += `<div class="animal">`;
-    domString +=    `<h2>${pets[i].name}</h2>`;
-    domString +=    `<img src=${pets[i].imageUrl} alt="pet image"/>`;
-    domString +=    `<p>${pets[i].color}</p>`;
-    domString +=    `<p class="special-skill">${pets[i].specialSkill}</p>`;
-    domString +=    `<footer>${pets[i].type}</footer>`;
+    domString +=    `<h2>${obj[i].name}</h2>`;
+    domString +=    `<img src=${obj[i].imageUrl} alt="pet image"/>`;
+    domString +=    `<p>${obj[i].color}</p>`;
+    domString +=    `<p class="special-skill">${obj[i].specialSkill}</p>`;
+    domString +=    `<footer>${obj[i].type}</footer>`;
     domString += `</div>`;
   }
   printToDom('pets', domString);
 }
 
+const buttonClicked = (ev) =>  {
+  const buttonId = ev.target.id;
+  console.log(buttonId);
+  const selectedCards = [];
+
+  for (let i = 0; i < pets.length; i++) {
+
+    if (buttonId === pets[i].type) {
+      selectedCards.push(pets[i]);
+      buildPetCards(selectedCards);
+} else if (buttonId === 'all') {
+  buildPetCards(pets);
+}
+}
+
+}
+
+const buttonEvents = () => {
+  document.getElementById('cat').addEventListener('click', buttonClicked);
+  document.getElementById('dog').addEventListener('click', buttonClicked);
+  document.getElementById('dino').addEventListener('click', buttonClicked);
+  document.getElementById('all').addEventListener('click', buttonClicked);
+}
+
+buttonEvents();
 buildPetCards(pets);
-
-const catsButton = document.getElementById('cats-button')
-
-const catsButtonClicked = (ev) =>  {
-  console.log('it worked!')
-}
-
-catsButton.addEventListener('click', catsButtonClicked);
-
-const dogsButton = document.getElementById('dogs-button')
-
-const dogsButtonClicked = (ev) =>  {
-  console.log('it worked! - dog')
-}
-
-dogsButton.addEventListener('click', dogsButtonClicked);
-
-const dinosButton = document.getElementById('dinos-button')
-
-const dinosButtonClicked = (ev) =>  {
-  console.log('it worked! - dino')
-}
-
-dinosButton.addEventListener('click', dinosButtonClicked);
-
-const allPetsButton = document.getElementById('all-pets-button')
-
-const allPetsButtonClicked = (ev) =>  {
-  console.log('it worked! - all')
-}
-
-allPetsButton.addEventListener('click', allPetsButtonClicked);
